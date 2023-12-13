@@ -1,0 +1,157 @@
+:root {
+    --default-color: #1d1e22;
+    --default-bg: #F2F2F2;
+
+    --toggle-color: #02A676;
+    --toggle-bg: #007369;
+    --toggle-bg-click: #1E5959;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100dvh;
+    background-color: var(--default-bg);
+    font-size: xx-large;
+    color: var(--default-color);
+}
+
+.container:has(#btn-switch:checked) {
+    --default-color: #F2F2F2;
+    --default-bg: #1d1e22;
+    background-color: var(--default-bg);
+    color: var(--default-color);
+}
+
+.butom {
+    margin: 2rem;
+}
+
+.label-switch {
+    display: inline-block;
+    width: 4rem;
+    height: 2rem;
+    background-color: var(--toggle-bg);
+    border-radius: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.label-switch::after{
+    position: absolute;
+    content: '';
+    width: 2rem;
+    height: 1.5rem;
+    background-color: var(--default-bg);
+    border-radius: 2rem;
+    top: 0.25rem;
+    left: 0.25rem;
+    transition: 0.3s;
+}
+
+#btn-switch {
+    display: none;
+}
+
+#btn-switch:checked ~ .label-switch {
+    background-color: var(--toggle-bg-click);
+}
+
+#btn-switch:checked ~ .label-switch::after {
+    left: 1.75rem;
+}
+
+.tooltip-container {
+    margin: 5rem;
+    position: relative;
+}
+
+
+a {
+    color: var(--default-color);
+}
+
+.tooltip-down {
+    position: absolute;
+    background-color: var(--default-color);
+    color: var(--default-bg);
+    border-radius: 5px;
+    display: none;
+    top: 3rem;
+}
+
+.tooltip-up {
+    position: absolute;
+    background-color: var(--default-color);
+    color: var(--default-bg);
+    border-radius: 5px;
+    display: none;
+    bottom: 3rem;
+    transform: translateX(0%, -50%);
+}
+
+.tooltip-left {
+    position: absolute;
+    background-color: var(--default-color);
+    color: var(--default-bg);
+    border-radius: 5px;
+    display: none;
+    right: 3rem;
+    transform: translate(-50%, -60%);
+}
+
+.tooltip-right {
+    position: absolute;
+    background-color: var(--default-color);
+    color: var(--default-bg);
+    border-radius: 5px;
+    display: none;
+    left: 3rem;
+    transform: translate(50%, -60%);
+}
+
+.tooltip-container:hover .tooltip {
+    display: block;
+}
+
+.tooltip-arrow-up,
+.tooltip-arrow-down,
+.tooltip-arrow-left,
+.tooltip-arrow-right {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-radius: 2px;
+}
+
+.tooltip-arrow-up {
+    border-bottom-color: var(--default-color);
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, 5%);
+}
+
+.tooltip-arrow-down {
+    border-top-color: var(--default-color);
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+}
+
+.tooltip-arrow-left {
+    border-right-color: var(--default-color);
+    top: 50%;
+    right: 100%;
+    transform: translate(5%, -50%);
+}
+
+.tooltip-arrow-right {
+    border-left-color: var(--default-color);
+    top: 50%;
+    left: 100%;
+    transform: translate(-5%, -50%);
+}
+
