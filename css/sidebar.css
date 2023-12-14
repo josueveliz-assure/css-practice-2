@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0px;
+    width: 80px;
+    height: 100%;
+    background: #252b38;
+    transition: all .5s ease;
+}
+
+header {
+    padding-left: 3rem;
+    font-size: 22px;
+    color: white;
+    text-align: left;
+    line-height: 70px;
+    background: #3e7eab;
+    user-select: none;
+}
+
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: .4s;
+}
+
+a {
+    display: flex;
+}
+
+.side-text {
+    display: none;
+}
+
+#check:checked ~ .sidebar .side-text {
+    display: inline;
+}
+
+ul li:hover a{
+    padding-left: 50px;
+}
+
+.sidebar ul a i{
+    margin-right: 16px;
+}
+
+#check{
+    display: none;
+}
+
+label #btn{
+    position: absolute;
+    cursor: pointer;
+    background: #3e7eab;
+    border-radius: 3px;
+}
+
+label #btn {
+    left: 250px;
+    top: 10px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+    width: 250px;
+}
